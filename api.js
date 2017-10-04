@@ -13,13 +13,14 @@ $(document).ready(function(){
         var lon = $("#lon").val();
         var radius = $("#radius").val();
         $.ajax({
-        url:"https://api.spotcrime.com/crimes.json?lat=" + lat +"lon="+lon+"&radius="+radius+"&callback=jsonp1507087119154&key=privatekeyforspotcrimepublicusers-commercialuse-877.410.1607",
+        url:'https://api.spotcrime.com/crimes.json?lat='+lat+'&lon=-'+lon+'&radius=0.02&callback=jsonp1507087119154&key=privatekeyforspotcrimepublicusers-commercialuse-877.410.1607',
         dataType: "jsonp",
         complete: function (response) {
             //$('#output').html(response.responseText);
             console.log(response);
-            jQuery.each(response, function() {
-              console.log(this);
+            //console.log(response.responseJSON.crimes);
+            $.each(response.responseJSON.crimes, function(){
+                console.log(this);
             });
         },
         error: function () {
