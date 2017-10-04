@@ -1,0 +1,13 @@
+#main-title {
+    text-align: center;
+}
+
+#map-display {
+    height: 50%;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
