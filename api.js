@@ -8,6 +8,7 @@ function initMap() {
 
 $(document).ready(function(){
     $("#search").click(function(e){
+        e.preventDefault();
         var lat = $("#lat").val();
         var lon = $("#lon").val();
         var radius = $("#radius").val();
