@@ -1,13 +1,24 @@
 #main-title {
     text-align: center;
+    color: white;
 }
 
-#map-display {
-    height: 50%;
+#map-area {
+    height: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 2%;
+    background-color: dimgrey;
+}
+
+#map {
+    height: 90%;
 }
 
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    background-color: darkcyan;
+    font-family: Arial, Helvetica, sans-serif;
   }
