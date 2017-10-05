@@ -22,3 +22,35 @@ html, body {
     background-color: darkcyan;
     font-family: Arial, Helvetica, sans-serif;
   }
+
+.container > div {
+    display: inline-block;
+    display: -moz-inline-box;
+    *display: inline; /* For IE7 */
+    zoom: 1; /* Trigger hasLayout */
+    width: 33%;
+    text-align: center;
+    margin-top: 2%;
+    color: white;
+}
+
+.search-block {
+    color: white;
+}
+
+#search-div {
+    text-align: center;
+    margin-bottom: 1%;
+    margin-top: 4%;
+}
+
+#search-button {
+    background-color: white; /* Green */
+    border: none;
+    color: darkcyan;
+    padding: 1.2% 6%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 100%;
+}

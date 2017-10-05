@@ -42,7 +42,7 @@ function makeMarker(marker,info){
 }
 
 $(document).ready(function(){
-    $("#search").click(function(e){
+    $("#search-button").click(function(e){
         e.preventDefault();
         var lat = $("#lat").val();
         var lon = $("#lon").val();
@@ -73,7 +73,7 @@ $(document).ready(function(){
         error: function () {
             $('#output').html('Bummer: there was an error!');
         },
-    });
-    return false;
+        });
+        return false;
     });
 });
