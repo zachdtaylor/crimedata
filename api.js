@@ -25,12 +25,9 @@ function makeMarker(marker,info){
             '</div>'+
             '<h1 id="firstHeading" class="firstHeading">'+marker.title+'</h1>'+
             '<div id="bodyContent">'+
-            '<p><b>Address</b>:'+ info.address+ 
-            '<p><b>Link</b>:'+ info.link+ 
+            '<p><b>Address</b>: '+ info.address+ 
+            '<p><b>Link</b>: <a href='+info.link+' target="blank">More Info</a>'+
             '</p>'+
-            '<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">'+
-            'https://en.wikipedia.org/w/index.php?title=Uluru</a> '+
-            '(last visited June 22, 2009).</p>'+
             '</div>'+
             '</div>';  
     
