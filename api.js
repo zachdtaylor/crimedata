@@ -10,8 +10,6 @@ function initMap() {
     infowindow = new google.maps.InfoWindow();
 }
 
-
-
 function makeMarker(marker,info){
     
     var marker = new google.maps.Marker({
@@ -25,16 +23,15 @@ function makeMarker(marker,info){
             '</div>'+
             '<h1 id="firstHeading" class="firstHeading">'+marker.title+'</h1>'+
             '<div id="bodyContent">'+
-            '<p><b>Address</b>: '+ info.address+ 
-            '<p><b>Link</b>: <a href='+info.link+' target="blank">More Info</a>'+
-            '</p>'+
+            '<p><b>Date:</b> '+ info.date+
+            '<p><b>Address:</b> '+ info.address+
             '</div>'+
             '</div>';  
     
         marker.addListener('click', function() {
             infowindow.setContent(contentString);
             infowindow.open(map, marker);
-            theMap.setCenter(marker.position.lat, marker.position.lng);
+            theMap.setCenter(marker.position);
         });
 }
 
@@ -61,7 +58,8 @@ $(document).ready(function(){
                 };
                 var info = {
                     link: this.link,
-                    address: this.address
+                    address: this.address,
+                    date: this.date
                 }
                 console.log("TESTS: " + marker.link);
                 makeMarker(marker,info);
