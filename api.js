@@ -38,19 +38,20 @@ function makeMarker(marker,info){
 $(document).ready(function(){
     $("#search-button").click(function(e){
         e.preventDefault();
-        var city = $("#city");
+        var city = $("#city").val();
+        console.log("https://maps.googleapis.com/maps/api/geocode/json?address="+city+"&key=AIzaSyAbctiVD5bPxsqajS2wh8ynAfljGsjI4qg");
         $.ajax({
             url:"https://maps.googleapis.com/maps/api/geocode/json?address="+city+"&key=AIzaSyAbctiVD5bPxsqajS2wh8ynAfljGsjI4qg",
-            dataType: "json"
+            dataType: "json",
             complete: function(response){
                 console.log(response);
                 
-                var lat = response.geometry.location.lat;
-                var lon = response.geometry.location.lng;
+                var lat = response.responseJSON.results[0].geometry.location.lat;
+                var lon = response.responseJSON.results[0].geometry.location.lng;
                 theMap.setCenter(new google.maps.LatLng(lat,lon));
                 theMap.setZoom(12);
                 $.ajax({
-                url:'https://api.spotcrime.com/crimes.json?lat='+lat+'&lon='+lon+'&radius=0.0&callback=jsonp1507087119154&key=privatekeyforspotcrimepublicusers-commercialuse-877.410.1607',
+                url:'https://api.spotcrime.com/crimes.json?lat='+lat+'&lon='+lon+'&radius=0.09&callback=jsonp1507087119154&key=privatekeyforspotcrimepublicusers-commercialuse-877.410.1607',
                 dataType: "jsonp",
                 complete: function (response) {
                     //$('#output').html(response.responseText);
@@ -64,7 +65,8 @@ $(document).ready(function(){
                         };
                         var info = {
                             link: this.link,
-                            address: this.address
+                            address: this.address,
+                            date: this.date
                         }
                         
                         makeMarker(marker,info);
@@ -74,10 +76,9 @@ $(document).ready(function(){
                     $('#output').html('Bummer: there was an error!');
                 },
                 });
-                return false;
-            });
+            }
         });
-    }
+    });
 });
         
         
