@@ -44,7 +44,7 @@ $(document).ready(function(){
         theMap.setCenter(new google.maps.LatLng(lat,-lon));
         theMap.setZoom(15);
         $.ajax({
-        url:'https://api.spotcrime.com/crimes.json?lat='+lat+'&lon=-'+lon+'&radius=0.02&callback=jsonp1507087119154&key=privatekeyforspotcrimepublicusers-commercialuse-877.410.1607',
+        url:'https://api.spotcrime.com/crimes.json?lat='+lat+'&lon=-'+lon+'&radius=0.09&callback=jsonp1507087119154&key=privatekeyforspotcrimepublicusers-commercialuse-877.410.1607',
         dataType: "jsonp",
         complete: function (response) {
             //$('#output').html(response.responseText);
